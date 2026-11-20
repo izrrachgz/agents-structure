@@ -1,0 +1,37 @@
+# Shared settings for this trusted project. Personal settings belong in
+# ~/.codex/config.toml. Deliberately inherit the user's model, sandbox, and
+# approval policy.
+
+project_doc_max_bytes = 65536
+
+# This is the combined instruction budget in bytes. Keep the frequently used
+# commands and routing in AGENTS.md and link to detailed component guidance.
+
+[agents]
+enabled = true
+max_concurrent_threads_per_session = 4
+
+# Size concurrency for the number of independent reviews the team actually
+# runs and its resource budget. Declare individual role instructions in agents/.
+
+# MCP servers belong in this file rather than a separate .mcp.json.
+# Keep secrets out of version control.
+# For each real integration document the owning team, business purpose, data
+# classes it can access and credential rotation owner. Record the trusted
+# endpoint or pinned local launcher and the minimal required tool scope.
+# Test discovery and one read-only operation with a non-production identity.
+# Keep deployment credentials and private connector settings in their approved
+# environment. Use a credential reference in this shared configuration.
+#
+# Remote example:
+# [mcp_servers.docs]
+# url = "https://example.com/mcp"
+# bearer_token_env_var = "DOCS_MCP_TOKEN"
+# enabled = true
+#
+# Local stdio example:
+# [mcp_servers.local_tools]
+# command = "node"
+# args = ["tools/mcp-server.mjs"]
+# env_vars = ["LOCAL_TOOLS_TOKEN"]
+# enabled = true

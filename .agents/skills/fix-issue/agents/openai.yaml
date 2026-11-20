@@ -1,0 +1,6 @@
+interface:
+  # Use the display name for the workflow and the short description for its outcome.
+  # The starter prompt can be customized for each invocation. Identify the affected behavior and include a sanitized example when available.
+  default_prompt: "Use $fix-issue. Diagnose the reported failure, implement the fix and verify the original behavior."
+  display_name: "Fix Issue"
+  short_description: "Diagnose and verify a focused bug fix"

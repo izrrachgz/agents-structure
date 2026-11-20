@@ -1,0 +1,6 @@
+interface:
+  # Use the display name for the workflow and the short description for its outcome.
+  # The starter prompt can be customized for each invocation. Give the comparison base and candidate or identify the working-tree scope.
+  default_prompt: "Use $review-change. Review the selected change and report its consumer impact and supporting evidence."
+  display_name: "Review Change"
+  short_description: "Find material defects in a change"

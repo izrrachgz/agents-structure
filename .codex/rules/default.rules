@@ -1,0 +1,34 @@
+# These rules apply when Codex requests to run matching commands outside the
+# sandbox. Keep broad allow rules in personal configuration, not in the repo.
+
+# Write each pattern as the executable followed by exact argument tokens.
+# Record the consequence in the justification and the narrower operation an
+# operator can use. Review wrappers, aliases and flag ordering separately.
+# Validate a positive and a neighboring negative case with "codex execpolicy
+# check --rules .codex/rules/default.rules -- <arguments>". This evaluates the
+# arguments as data. Example pair: git reset --hard / git reset --soft.
+# Track the owner of environment-specific exceptions in the team's change record.
+
+prefix_rule(
+    pattern = ["git", "reset", "--hard"],
+    decision = "forbidden",
+    justification = "Preserve uncommitted work; use a targeted, recoverable operation instead.",
+)
+
+prefix_rule(
+    pattern = ["git", "clean", ["-f", "-fd", "-df", "-fdx", "-xdf"]],
+    decision = "forbidden",
+    justification = "Do not recursively remove untracked project files; inspect and remove exact targets instead.",
+)
+
+prefix_rule(
+    pattern = ["rm", ["-rf", "-fr"]],
+    decision = "prompt",
+    justification = "Recursive forced deletion requires explicit review of the exact target.",
+)
+
+prefix_rule(
+    pattern = ["powershell", "Remove-Item", "-Recurse"],
+    decision = "prompt",
+    justification = "Recursive deletion requires explicit review of the exact target.",
+)

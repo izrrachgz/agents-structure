@@ -1,0 +1,19 @@
+{
+  "description": "PreToolUse passes matching shell requests to validate_shell.py. When maintaining a registration, document its event, tool matcher, platform launcher, working-directory assumptions, timeout and decision in the handler. Review the command and script together. Verify one permitted and one denied sample through stdin on each supported platform before trusting the hook.",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "^Bash$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "root=\"$(git rev-parse --show-toplevel 2>/dev/null || pwd)\"; python3 \"$root/.codex/hooks/validate_shell.py\"",
+            "commandWindows": "powershell.exe -NoProfile -Command \"$root = git rev-parse --show-toplevel 2>$null; if (-not $root) { $root = (Get-Location).Path }; $input | python (Join-Path $root '.codex/hooks/validate_shell.py')\"",
+            "timeout": 10,
+            "statusMessage": "Checking shell command safety"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+interface:
+  # Use the display name for the workflow and the short description for its outcome.
+  # The starter prompt can be customized for each invocation. Identify the intended environment, immutable revision and requested release action.
+  default_prompt: "Use $deploy. Assess readiness for the target environment and identify the evidence needed for rollout."
+  display_name: "Deploy"
+  short_description: "Prepare and verify repository deployments"

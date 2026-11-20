@@ -1,0 +1,17 @@
+# Developer-specific Codex instructions
+AGENTS.override.md
+
+# Local environment settings
+.env
+.env.*
+!.env.example
+
+# Python hook and validation artifacts
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+
+# Desktop metadata
+.DS_Store
+Thumbs.db
