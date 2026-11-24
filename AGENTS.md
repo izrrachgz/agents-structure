@@ -42,6 +42,7 @@ Use the repository skills when their descriptions match the task:
 
 - `$review-change` for read-only change review.
 - `$fix-issue` for reproducing and fixing a defect.
+- `$ub-mode` for test-first implementation and behavior-preserving refactoring.
 - `$deploy` for deployment preparation or execution.
 
 Custom read-only agent roles are defined in `.codex/agents/`. Use subagents when the user asks for delegation or when an approved workflow explicitly calls for independent parallel review.

@@ -1,0 +1,4 @@
+interface:
+  display_name: "UB Mode"
+  short_description: "Make small, test-first code changes"
+  default_prompt: "Use $ub-mode to establish the expected behavior, implement the change in small steps, and verify the result."

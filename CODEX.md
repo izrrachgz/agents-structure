@@ -41,6 +41,7 @@ Publisher references checked on 2026-11-19. Choose the edition supported by your
 |-- .agents/skills/                   Discoverable, reusable workflows
 |   |-- review-change/SKILL.md
 |   |-- fix-issue/SKILL.md
+|   |-- ub-mode/SKILL.md
 |   `-- deploy/SKILL.md
 `-- docs/standards/                   Detailed conventions referenced by AGENTS.md
 ```
@@ -69,7 +70,7 @@ Codex `.rules` files control commands outside the sandbox; they are not prose co
 1. Open the folder as a trusted Codex project. Untrusted projects do not load project `.codex/` configuration, hooks, or command rules.
 2. Start a new Codex session after changing `AGENTS.md`, configuration, hooks, or rules.
 3. Open `/hooks`, review the checked-in hook, and trust it if its behavior is appropriate for your environment.
-4. Invoke a workflow explicitly with `$review-change`, `$fix-issue`, or `$deploy`, or let Codex select it when the request matches its description.
+4. Invoke a workflow explicitly with `$review-change`, `$fix-issue`, `$ub-mode`, or `$deploy`, or let Codex select it when the request matches its description.
 
 The scaffold does not pin a model, approval policy, or sandbox mode. Those values inherit from each developer's account and personal `~/.codex/config.toml`.
 
