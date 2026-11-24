@@ -26,6 +26,7 @@ Keep environment-specific thresholds and release steps in the deployment contrac
 
 ## Security and operations
 
+- Projects adopting this scaffold must implement and verify the security and privacy controls applicable to their software under ISO/IEC 27001:2022 and ISO/IEC 27701:2025. Follow the [adoption standard](docs/standards/security-privacy.md) to establish scope, retain evidence, and resolve gaps.
 - Never commit credentials, access tokens, private keys, or populated local environment files.
 - Treat production changes, destructive data operations, releases, and deployments as approval-gated actions.
 - Do not weaken security checks merely to make validation pass.

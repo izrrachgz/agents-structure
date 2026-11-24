@@ -17,6 +17,7 @@ For each target, replace the example cells above with the exact account, region 
 Identify the deployable unit and immutable identifier. This may be a package digest, dataset snapshot, static asset manifest or configuration revision. Record the source revision, builder and verification method. When a team adopts a supply-chain assurance level, specify its track, level and supporting evidence using [SLSA 1.2](https://slsa.dev/spec/v1.2/).
 
 - Define the build, test, security, and migration checks required for each environment.
+- For production, link the applicable security and privacy checks and approved exceptions from the [adoption standard](../../../../docs/standards/security-privacy.md#review-changes-and-releases).
 - Define the deployable artifact or revision identifier and how it is verified.
 - Define whether migrations are backward-compatible and how they are ordered relative to application rollout.
 

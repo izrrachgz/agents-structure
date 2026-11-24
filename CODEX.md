@@ -10,6 +10,7 @@ Start with one critical operation, such as submitting an order, importing a data
 | --- | --- | --- |
 | What a contributor needs on day one | [AGENTS.md](AGENTS.md) | Owning team, supported components, generated paths, setup and check commands |
 | How state and consumers are protected | [Code style](docs/standards/code-style.md) and [interface conventions](docs/standards/api-conventions.md) | A batch has a stable identity. Replaying it preserves totals. A published view defines when the batch is complete. |
+| Which security and privacy requirements the project must implement | [Security and privacy adoption standard](docs/standards/security-privacy.md) | Link the management system scope, risk treatment plans, control evidence, and approval decisions |
 | How to demonstrate the promise | [Testing](docs/standards/testing.md) | Interrupt the importer after its first checkpoint, resume it and compare reconciled totals |
 | How an operator makes a release decision | [Deployment contract](.agents/skills/deploy/references/deploy-config.md) | Name the signal owner, observation window, acceptable lag and recovery action |
 | How the team detects and recovers from failure | [Operational readiness](docs/standards/operational-readiness.md) | Compare the age of the last reconciled batch with the freshness objective and rehearse recovery from its checkpoint |
