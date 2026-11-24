@@ -38,11 +38,14 @@ Keep environment-specific thresholds and release steps in the deployment contrac
 
 ## Reusable workflows
 
-Use the repository skills when their descriptions match the task:
+Use UB Mode as the primary workflow for writing or changing code, including
+defect fixes and refactors. Read `.agents/skills/ub-mode/SKILL.md` before
+implementation and follow it wherever another implementation workflow overlaps.
+Keep commits, pushes, and worktree cleanup within the authorized scope.
 
+- `$ub-mode` for implementation, test-first development, and refactoring.
+- `$fix-issue` for reproducing and diagnosing a defect. Use it alongside UB Mode when a fix needs additional diagnosis.
 - `$review-change` for read-only change review.
-- `$fix-issue` for reproducing and fixing a defect.
-- `$ub-mode` for test-first implementation and behavior-preserving refactoring.
 - `$deploy` for deployment preparation or execution.
 
 Custom read-only agent roles are defined in `.codex/agents/`. Use subagents when the user asks for delegation or when an approved workflow explicitly calls for independent parallel review.

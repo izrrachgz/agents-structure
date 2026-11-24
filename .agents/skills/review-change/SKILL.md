@@ -17,4 +17,4 @@ Prioritize correctness, regressions, security, compatibility, data loss, race co
 
 Return findings first, ordered by severity. Each finding should identify the relevant file and location, explain the failure mode, and give a concise reproduction or triggering scenario. Distinguish confirmed defects from questions or residual risks.
 
-Do not edit files during this workflow. If the user also wants fixes, finish the review and then use the `$fix-issue` workflow for the approved findings.
+Do not edit files during this workflow. If the user also requests fixes, finish the review, then use [$ub-mode](../ub-mode/SKILL.md) for implementation and [$fix-issue](../fix-issue/SKILL.md) when a finding needs further diagnosis.

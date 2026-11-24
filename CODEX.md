@@ -70,9 +70,15 @@ Codex `.rules` files control commands outside the sandbox; they are not prose co
 1. Open the folder as a trusted Codex project. Untrusted projects do not load project `.codex/` configuration, hooks, or command rules.
 2. Start a new Codex session after changing `AGENTS.md`, configuration, hooks, or rules.
 3. Open `/hooks`, review the checked-in hook, and trust it if its behavior is appropriate for your environment.
-4. Invoke a workflow explicitly with `$review-change`, `$fix-issue`, `$ub-mode`, or `$deploy`, or let Codex select it when the request matches its description.
+4. Use `$ub-mode` for code changes. Use `$fix-issue` for defect diagnosis, `$review-change` for read-only review, and `$deploy` for releases.
 
 The scaffold does not pin a model, approval policy, or sandbox mode. Those values inherit from each developer's account and personal `~/.codex/config.toml`.
+
+## UB Mode
+
+This scaffold includes Robert C. Martin's UB Mode exactly as published at upstream revision `3da62bf3fcfd2034de41f30d920d2739e566171f`. [Pinned upstream source](https://github.com/unclebob/ub-mode/tree/3da62bf3fcfd2034de41f30d920d2739e566171f) · [MIT license](.agents/skills/ub-mode/LICENSE)
+
+Invoke it with `$ub-mode` in Codex. It is the default workflow for code changes, including defect fixes and refactors. Run the applicable companion checks when the component supports them and report any checks you could not run. [Skill](.agents/skills/ub-mode/SKILL.md) · [Companion tools](.agents/skills/ub-mode/README.md#companion-tool-repositories)
 
 ## Add an MCP server
 
